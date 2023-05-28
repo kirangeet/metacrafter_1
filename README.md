@@ -45,6 +45,7 @@ function mint(address _address, uint _value) public {
 }
     // burn function
 function burn(address _address, uint _value) public {
+require(balance[_address]>=_value,"value should be less than balance");
     totalSupply -= _value;
     balance[_address] -= _value;
 }
